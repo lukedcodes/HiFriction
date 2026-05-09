@@ -1,0 +1,39 @@
+# Hi Friction
+
+> Hi Friction is a social network that deliberately adds friction to keep bots out and humans in. Every user is verified human — not just at signup, but continuously. Currently in pre-launch, accepting waitlist signups with reserved usernames for founding members.
+
+Hi Friction is built on the belief that social media was better when the people on it were actually people. The product introduces small, deliberate verification moments that bots can't pass but humans barely notice.
+
+## What Hi Friction does
+
+- **Verify Humanity** — A liveness check confirms each user is a real, moving person at signup. Verification continues quietly in the background after that, not just once.
+- **Post With Intention** — Lightweight friction on posting reduces spam, fake accounts, and low-effort content. Only verified humans can post.
+- **Better Conversations** — Because every account is a verified person, replies, threads, and feeds reflect real human behaviour.
+
+## How verification works
+
+1. **Signup check.** Liveness selfie plus phone verification. Takes about two minutes.
+2. **Continuous monitoring.** Behavioural patterns are checked passively in the background. Inhuman patterns get flagged.
+3. **Periodic human challenges.** Occasionally users complete prompts a bot cannot answer (e.g. "show us your view right now", "describe your commute in four words"). Completing one earns a Humanity Token.
+4. **Community vouching.** Existing verified members vouch for new ones. A user's Human Score grows over time. The top tier is the Verified Human badge.
+
+## Founding members
+
+Users who join the waitlist before public launch get:
+
+- Their chosen username reserved permanently
+- The **Original Human** badge — a permanent marker that they joined before the bots even tried
+
+## Privacy stance
+
+Verification data is not retained beyond the check itself. Hi Friction does not sell email addresses, send marketing spam, or generate newsletter content with AI.
+
+## Links
+
+- [Home](https://hifriction.com)
+- [Join the waitlist](https://hifriction.com#waitlist)
+- [How it works](https://hifriction.com#features)
+
+## Contact
+
+- Email: hello@hifriction.com

@@ -1,14 +1,19 @@
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import HowItWorks from "@/components/HowItWorks";
+import WaitlistCTA from "@/components/WaitlistCTA";
+import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
-    <main className="page stack">
-      <h1>HiFriction</h1>
-      <p className="muted">A social network that pushes back.</p>
-      <p>
-        This is the starting point. The layout, type, and spacing all come from
-        a small set of CSS variables and shared classes in{" "}
-        <code>app/globals.css</code>. See <code>GUIDELINES.md</code> for how
-        styling is organised.
-      </p>
-    </main>
+    <>
+      <main>
+        <Hero />
+        <Features />
+        <HowItWorks />
+        <WaitlistCTA />
+      </main>
+      <Footer />
+    </>
   );
 }

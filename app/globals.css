@@ -1,54 +1,61 @@
 /* =========================================================================
    HiFriction — global stylesheet
    -------------------------------------------------------------------------
-   One file, three sections:
-     1. Tokens   — design variables (colors, spacing, type scale)
-     2. Element  — bare-tag defaults (h1, p, a, button, ...) — no classes
-     3. Utility  — small reusable classes, composed in markup
-   Add a new component class only when a pattern repeats and element
-   selectors aren't enough. See GUIDELINES.md.
+   Three sections:
+     1. Tokens   — design variables
+     2. Element  — bare-tag defaults
+     3. Utility  — small reusable classes
    ========================================================================= */
 
 
 /* 1. Tokens --------------------------------------------------------------- */
 :root {
-  /* Color */
-  --color-bg: #ffffff;
-  --color-fg: #111111;
-  --color-muted: #666666;
-  --color-accent: #1a4fff;
-  --color-border: #e5e5e5;
+  /* Brand — Emerald */
+  --hf-emerald-100: #6DE3C7;
+  --hf-emerald-300: #40BEA1;
+  --hf-emerald-500: #036951;
+  --hf-emerald-700: #0B3D31;
 
-  /* Spacing scale (rem) */
+  /* Brand — Grey */
+  --hf-grey-000: #F5F7FB;
+  --hf-grey-300: #E6E8EC;
+  --hf-grey-700: #1D1F24;
+
+  /* Semantic aliases */
+  --bg-primary:   #F5F7FB;
+  --text-primary: #1D1F24;
+  --text-muted:   #6B7280;
+  --accent:       var(--hf-emerald-500);
+  --accent-hover: var(--hf-emerald-300);
+  --border:       rgba(29, 31, 36, 0.1);
+
+  /* Spacing scale */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 1rem;
   --space-4: 1.5rem;
   --space-5: 2.5rem;
   --space-6: 4rem;
+  --space-7: 7.5rem;
 
   /* Type */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: ui-monospace, "SF Mono", Consolas, monospace;
-  --text-sm: 0.875rem;
+  --font-serif: var(--font-noto-serif, 'Noto Serif'), Georgia, serif;
+  --font-sans:  var(--font-noto-sans, 'Noto Sans'), system-ui, -apple-system, sans-serif;
+  --font-mono:  ui-monospace, 'SF Mono', Consolas, monospace;
+
+  --text-sm:   0.875rem;
   --text-base: 1rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.75rem;
-  --text-2xl: 2.5rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.5rem;
+  --text-2xl:  2rem;
+  --text-3xl:  clamp(2.25rem, 5vw, 4rem);
 
   /* Layout */
-  --measure: 36rem;       /* comfortable reading width */
-  --radius: 6px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0e0e10;
-    --color-fg: #f3f3f3;
-    --color-muted: #a0a0a0;
-    --color-accent: #6f8eff;
-    --color-border: #2a2a2e;
-  }
+  --measure:    86rem;
+  --measure-md: 48rem;
+  --gutter:     var(--space-5);
+  --radius:     8px;
+  --radius-lg:  16px;
 }
 
 
@@ -58,63 +65,140 @@
 html, body { margin: 0; padding: 0; }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-fg);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-sans);
   font-size: var(--text-base);
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 { line-height: 1.2; margin: 0 0 var(--space-3); }
-h1 { font-size: var(--text-2xl); }
-h2 { font-size: var(--text-xl); }
-h3 { font-size: var(--text-lg); }
+/* Global aurora — fixed behind all content */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.3;
+  background: linear-gradient(45deg, #F5F7FB 0%, #6DE3C7 49%, #F5F7FB 82%);
+  background-size: 200%;
+  animation: aurora 10s infinite;
+  pointer-events: none;
+}
 
-p { margin: 0 0 var(--space-3); }
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.45));
+  background-size: 200%;
+  animation: aurora 7s infinite;
+  pointer-events: none;
+}
+
+@keyframes aurora {
+  0%   { background-position: left top; }
+  25%  { background-position: right top; }
+  50%  { background-position: right bottom; }
+  75%  { background-position: left bottom; }
+  100% { background-position: left top; }
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  line-height: 1.15;
+  margin: 0 0 var(--space-3);
+  color: var(--text-primary);
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+
+p {
+  margin: 0 0 var(--space-3);
+  color: var(--text-muted);
+}
 
 a {
-  color: var(--color-accent);
+  color: var(--accent);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
 }
-a:hover { text-decoration: none; }
+a:hover { color: var(--accent-hover); text-decoration: none; }
 
 button {
   font: inherit;
-  color: inherit;
-  background: transparent;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: var(--space-2) var(--space-3);
   cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-5);
+  background: var(--accent);
+  color: #fff;
+  transition: background 100ms ease;
 }
-button:hover { border-color: var(--color-fg); }
+button:hover { background: var(--accent-hover); }
 
-code, pre { font-family: var(--font-mono); }
+input, textarea {
+  font: inherit;
+  background: #fff;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-4);
+  width: 100%;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+input:focus, textarea:focus { border-color: var(--accent); }
+input::placeholder { color: rgba(107, 114, 128, 0.5); }
 
 
 /* 3. Utility / layout classes -------------------------------------------- */
 
-/* Page-level container — caps reading width and centers content. */
-.page {
+.container {
   max-width: var(--measure);
   margin: 0 auto;
-  padding: var(--space-5) var(--space-3);
+  padding: 0 var(--gutter);
 }
 
-/* Vertical rhythm: gap between direct children. */
+.container-md {
+  max-width: var(--measure-md);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
 .stack > * + * { margin-top: var(--space-3); }
 .stack-lg > * + * { margin-top: var(--space-5); }
 
-/* Muted, secondary text. */
-.muted { color: var(--color-muted); }
+.muted { color: var(--text-muted); }
 
-/* Visually hidden but available to screen readers. */
 .sr-only {
   position: absolute;
   width: 1px; height: 1px;
   padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0, 0, 0, 0);
+  overflow: hidden; clip: rect(0,0,0,0);
   white-space: nowrap; border: 0;
 }
+
+.section { padding: var(--space-7) 0; }
+
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(29, 31, 36, 0.08);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* Fade-up entrance animation */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up         { animation: fade-up 0.5s ease both; }
+.fade-up-delay-1 { animation-delay: 200ms; }
+.fade-up-delay-2 { animation-delay: 400ms; }
+.fade-up-delay-3 { animation-delay: 600ms; }

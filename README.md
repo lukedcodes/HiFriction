@@ -1,28 +1,31 @@
 # HiFriction
+**Humans only. We checked.**
 
-A social network app that pushes back.
+Social media was better when humans were posting. So we're making it human again — by adding friction on purpose.
 
-Most social products optimize for *low* friction — infinite scroll, one-tap reactions, frictionless reshares. HiFriction is an experiment in the opposite direction: deliberate friction in the places where thoughtless engagement causes the most harm, and smoother paths where genuine connection happens.
+HiFriction is the only social network that verifies every user is a real person. Not just at signup. Continuously. And turns that into a culture people are proud to be part of.
+
+## Why friction?
+
+Every UX designer is taught to remove it. We broke that rule deliberately.
+
+When you see a post here, a human wrote it. When you connect with someone, they're real. The small effort it takes to join is exactly what makes it worth joining.
+
+Every network that optimised for ease ended up flooded with bots and AI noise. They removed every barrier, and everything got in. We went the other way.
+
+## What we're building
+
+A world where you can scroll, connect, and have a conversation without wondering if there's a real person on the other side. Where the noise is gone and what's left is genuinely worth your time.
+
+The long-term bet: that human-verified social media isn't just possible, but so much better that everything else starts to feel hollow by comparison.
 
 ## Status
 
-Very early. Repository scaffolding only — no application code yet.
-
-## Goals
-
-- Reward considered posts and replies over reflexive ones.
-- Make amplification (reshare, quote, broadcast) cost something — attention, time, or context — proportional to reach.
-- Keep the parts that actually feel good: small-group conversation, following people you like, finding new things to read.
-
-## Non-goals
-
-- Maximizing daily active users or session length.
-- Algorithmic feeds tuned for engagement.
-- Replicating existing networks feature-for-feature.
+Early. Scaffolding in place, application code in progress.
 
 ## Getting started
 
-To be written once a stack is chosen.
+To be written once the stack is stable.
 
 ## License
 

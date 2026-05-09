@@ -1,0 +1,62 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-7);
+  }
+}
+
+.copyCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(3, 105, 81, 0.1);
+  border: 1px solid rgba(3, 105, 81, 0.2);
+  border-radius: 99px;
+  padding: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-5);
+  align-self: flex-start;
+}
+
+.badgeIcon {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.badgeLabel {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.heading {
+  margin-bottom: var(--space-4);
+}
+
+.body {
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.formCard {
+  width: 100%;
+}
+
+.reassurance {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin: var(--space-3) 0 0;
+}
