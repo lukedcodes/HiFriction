@@ -49,7 +49,7 @@ export default function WaitlistForm() {
     }
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!usernamePattern.test(username) || !email.includes("@")) return;
 
@@ -61,18 +61,24 @@ export default function WaitlistForm() {
     setSubmitting(true);
     setServerError("");
 
-    const res = await fetch("/api/waitlist", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, email }),
-    });
-    const data = await res.json();
+    const { error } = await supabase
+      .from("waitlist")
+      .insert({ username: username.toLowerCase(), email: email.toLowerCase() });
 
-    if (res.ok) {
+    if (error) {
+      if (error.code === "23505") {
+        const isDuplicateEmail = error.message.includes("email");
+        setServerError(
+          isDuplicateEmail
+            ? "Looks like you're already in. Good instincts."
+            : "Someone just grabbed that one. Humans are fast."
+        );
+      } else {
+        setServerError("Something went wrong. A human is on it.");
+      }
+    } else {
       setSuccess(true);
       gtag("event", "waitlist_signup", { method: "email" });
-    } else {
-      setServerError(data.error ?? "Something went wrong. A human is on it.");
     }
     setSubmitting(false);
   }
