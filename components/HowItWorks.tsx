@@ -2,22 +2,22 @@ import styles from "./HowItWorks.module.css";
 
 const steps = [
   {
-    numeral: "①",
+    numeral: "1",
     title: "You sign up. We check.",
     body: "Liveness selfie. Phone verification. Two minutes. Confirms you're a moving, breathing person. Welcome.",
   },
   {
-    numeral: "②",
+    numeral: "2",
     title: "We keep checking. Quietly.",
     body: "Behavioural monitoring runs in the background. Inhuman patterns get flagged. You never see it. It just works.",
   },
   {
-    numeral: "③",
+    numeral: "3",
     title: "Challenges keep you human.",
     body: "Periodically, we'll ask you something a bot can never answer. Show us your view right now. Describe your commute in four words. Find something older than you. Complete a challenge, earn a Humanity Token.",
   },
   {
-    numeral: "④",
+    numeral: "4",
     title: "The community vouches.",
     body: "Real members vouch for new ones. Your Human Score grows. The top tier? Verified Human. The most coveted badge on the network.",
   },

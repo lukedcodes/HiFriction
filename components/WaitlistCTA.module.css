@@ -55,6 +55,19 @@
   width: 100%;
 }
 
+.formHeader {
+  margin-bottom: var(--space-4);
+}
+
+.formTitle {
+  margin: 0 0 var(--space-1);
+}
+
+.formSub {
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
 .reassurance {
   font-size: var(--text-sm);
   color: var(--text-muted);

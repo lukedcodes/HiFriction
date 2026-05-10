@@ -7,6 +7,12 @@ export default function WaitlistCTA() {
     <section id="waitlist" className="section" aria-labelledby="cta-heading">
       <div className={`container ${styles.layout}`}>
         <div className={`card ${styles.formCard}`}>
+          <div className={styles.formHeader}>
+            <h3 className={styles.formTitle}>Stake your claim. Stay human.</h3>
+            <p className={styles.formSub}>
+              Pick your handle. We'll hold it until launch.
+            </p>
+          </div>
           <WaitlistForm />
           <Counter />
           <p className={styles.reassurance}>

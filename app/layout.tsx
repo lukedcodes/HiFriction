@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     "Social media was better when humans were posting. Hi Friction verifies every user, every post, every day. Bots aren't welcome here.",
   metadataBase: new URL("https://hifriction.com"),
   icons: {
-    icon: "/HF-Icon.png",
-    apple: "/HF-Icon.png",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
   openGraph: {
     title: "Hi Friction — The Human Social Network",

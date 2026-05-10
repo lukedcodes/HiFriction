@@ -18,7 +18,7 @@ const blogPosts = [
 const socials = [
   { href: "https://x.com/hifriction", label: "X (Twitter)" },
   { href: "https://instagram.com/hifriction", label: "Instagram" },
-  { href: "https://linkedin.com/company/hifriction", label: "LinkedIn" },
+  { href: "https://reddit.com/r/hifriction", label: "Reddit" },
 ];
 
 export default function Footer() {
@@ -30,6 +30,9 @@ export default function Footer() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/HiFriction-Logo-Light.png" alt="Hi Friction" height={36} style={{ width: "auto" }} />
           <p className={styles.tagline}>Humans only. We checked.</p>
+          <p className={styles.about}>
+            The internet was built by people. Somewhere along the way, that got forgotten. We're doing something about it.
+          </p>
         </div>
 
         <div className={styles.links}>
@@ -46,7 +49,7 @@ export default function Footer() {
 
           <div className={styles.col}>
             <p className={styles.colHeading}>Socials</p>
-            <ul className={styles.linkList}>
+            <ul className={`${styles.linkList} ${styles.socialList}`}>
               {socials.map(({ href, label }) => (
                 <li key={href}>
                   <a href={href} className={styles.link} target="_blank" rel="noopener noreferrer">
@@ -55,8 +58,8 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <a href="mailto:hello@hifriction.com" className={styles.email}>
-              hello@hifriction.com
+            <a href="mailto:info@hifriction.com" className={styles.email}>
+              info@hifriction.com
             </a>
           </div>
         </div>
