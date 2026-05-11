@@ -4,6 +4,15 @@
   gap: var(--space-3);
 }
 
+/* Honeypot — off-screen field that real users don't see (and don't fill). */
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* Reserve fixed height for username field + its feedback line */
 .inputGroup {
   position: relative;

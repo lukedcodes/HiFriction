@@ -2,9 +2,13 @@
 
 import { useState, useRef } from "react";
 import { supabase } from "@/lib/supabase";
+import { isDisposableEmail } from "@/lib/disposableEmails";
 import styles from "./WaitlistForm.module.css";
 
 type AvailabilityState = "idle" | "checking" | "available" | "taken" | "invalid";
+
+// Reject submissions faster than this — real users take longer to fill the form.
+const MIN_SUBMIT_MS = 1500;
 
 function gtag(...args: unknown[]) {
   if (typeof window !== "undefined" && "gtag" in window) {
@@ -15,11 +19,13 @@ function gtag(...args: unknown[]) {
 export default function WaitlistForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [availability, setAvailability] = useState<AvailabilityState>("idle");
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [serverError, setServerError] = useState("");
   const checkTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const mountedAt = useRef<number>(Date.now());
 
   const usernamePattern = /^[a-zA-Z0-9_]{3,20}$/;
 
@@ -52,6 +58,24 @@ export default function WaitlistForm() {
   async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!usernamePattern.test(username) || !email.includes("@")) return;
+
+    // Honeypot tripped — silently behave as if it succeeded so the bot moves on.
+    if (honeypot) {
+      gtag("event", "bot_detected", { reason: "honeypot" });
+      setSuccess(true);
+      return;
+    }
+
+    if (Date.now() - mountedAt.current < MIN_SUBMIT_MS) {
+      gtag("event", "bot_detected", { reason: "too_fast" });
+      setServerError("Hmm, that was quick. Try again?");
+      return;
+    }
+
+    if (isDisposableEmail(email)) {
+      setServerError("Please use a real email address.");
+      return;
+    }
 
     gtag("event", "cta_click", {
       cta_label: "reserve_my_spot",
@@ -96,6 +120,21 @@ export default function WaitlistForm() {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form} noValidate>
+      {/* Honeypot — invisible field for bots only. Real users never touch it. */}
+      <div className={styles.honeypot} aria-hidden="true">
+        <label>
+          Website
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+          />
+        </label>
+      </div>
+
       <div className={styles.inputGroup}>
         <div className={styles.inputRow}>
           <span className={styles.atPrefix} aria-hidden="true">@</span>
