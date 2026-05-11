@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import WaitlistCTA from "@/components/WaitlistCTA";
+import ScrollOnArrival from "@/components/ScrollOnArrival";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <ScrollOnArrival />
       <Aurora />
       <Hero />
       <Features />

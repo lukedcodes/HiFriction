@@ -13,8 +13,7 @@ export default function Hero() {
 
           <p className={`fade-up fade-up-delay-1 ${styles.sub}`}>
             We built a social network that deliberately adds friction. Enough to
-            stop bots. Not enough to stop you. Every user is verified human —
-            not just at signup, but continuously.
+            stop bots. Not enough to stop you. Every user is verified human, not just at signup, but continuously.
           </p>
 
           <div className={`fade-up fade-up-delay-2 ${styles.ctaRow}`}>

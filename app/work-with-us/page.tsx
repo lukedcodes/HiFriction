@@ -14,39 +14,40 @@ export default function WorkWithUsPage() {
         <header className={styles.header}>
           <h1>Work With Us</h1>
           <p className="lede">
-            Hi Friction is a small audience of verified humans who chose to be
-            here. If you make something worth their time, we'd like to talk.
+            Hi Friction is a small network of verified humans who chose to be
+            here. If you make something worth their attention, read on.
           </p>
         </header>
 
         <div className={styles.body}>
           <h2>What advertising looks like here</h2>
           <p>
-            We don't sell attention by the kilo. The feed isn't an auction. Ads
-            on Hi Friction are limited, clearly labelled, and shown to people who
-            actually opted in to seeing them. No retargeting, no behavioural
-            profiles, no tracking beyond what's needed to count impressions.
+            No auctions. No retargeting. No behavioural profiles built from
+            stalking people across the internet.
           </p>
 
           <p>
-            Because every user is verified human, you're paying for real people
-            and real reach — not bots inflating impressions in a dashboard.
+            Ads on Hi Friction are limited, clearly labelled, and placed where
+            they actually make sense. Next to the communities most likely to
+            care about what you do. You're not buying reach measured in bots
+            and inflated dashboards. You're buying real people. We checked.
           </p>
 
           <h2>What we offer</h2>
           <ul className={styles.list}>
             <li>
-              <strong>Community sponsorships.</strong> Sponsor a single{" "}
-              <code>/hi/</code> community for a quarter — your brand alongside
-              the people who care most about your category.
+              <strong>Community sponsorships.</strong> Pick a{" "}
+              <code>/hi/</code> community and sponsor it for a quarter. Your
+              brand alongside the people who already care about your category.
+              Simple placement, no noise.
             </li>
             <li>
-              <strong>Newsletter placements.</strong> A single, well-made spot in
-              our weekly community digest.
+              <strong>Newsletter placements.</strong> One spot in our weekly
+              digest. Well-made, not buried.
             </li>
             <li>
-              <strong>Product partnerships.</strong> Limited integrations and
-              campaigns we build together. Selective.
+              <strong>Product partnerships.</strong> Campaigns we build
+              together, properly. We're selective. That's the point.
             </li>
           </ul>
 
@@ -54,8 +55,8 @@ export default function WorkWithUsPage() {
           <p>
             Email{" "}
             <a href="mailto:business@hifriction.com">business@hifriction.com</a>{" "}
-            with a couple of lines about what you're working on and what you'd
-            like to do. A real person reads every one.
+            with a line or two about what you make and what you're after. A
+            real person reads every one.
           </p>
         </div>
       </div>

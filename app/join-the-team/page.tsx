@@ -7,39 +7,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/join-the-team" },
 };
 
-type Role = {
-  title: string;
-  team: string;
-  summary: string;
-};
-
-const roles: Role[] = [
-  {
-    title: "Flutter Developer",
-    team: "Mobile",
-    summary:
-      "Build and ship the Hi Friction mobile app — iOS and Android — alongside a small product team. Comfortable with Dart, Flutter, and the patience required to make something feel fast.",
-  },
-  {
-    title: "Marketing Lead",
-    team: "Growth",
-    summary:
-      "Own how we tell the Hi Friction story — to press, to communities, to the people who'd love this but haven't heard of it yet. Light on jargon, heavy on taste.",
-  },
-  {
-    title: "Backend Engineer",
-    team: "Platform",
-    summary:
-      "Help build the systems that keep the network human — from verification to trust signals to the boring-but-important pipes underneath.",
-  },
-  {
-    title: "Community Manager",
-    team: "Communities",
-    summary:
-      "Spend your days inside Hi/ communities — helping moderators, spotting patterns, and being the human face of the team to the humans who use it.",
-  },
-];
-
 export default function JoinTheTeamPage() {
   return (
     <section className="section">
@@ -47,35 +14,27 @@ export default function JoinTheTeamPage() {
         <header className={styles.header}>
           <h1>Join the Team</h1>
           <p className="lede">
-            We're a small team building something we actually want to use. If
-            that sounds interesting, we'd love to hear from you — even if there
-            isn't a role here that fits perfectly.
+            We're early. The team is small and we're building something we
+            actually want to exist. If that sounds like your kind of problem,
+            we'd like to hear from you.
           </p>
         </header>
 
         <div className={styles.body}>
-          <h2>How to get in touch</h2>
+          <p>
+            We're not hiring for specific roles right now. What we're looking
+            for is people who get what we're trying to do and have skills that
+            could help us do it. Builders, designers, writers, community
+            people. If you've read the site and thought "I could help with
+            that"... that's the right instinct. Send us something.
+          </p>
+
+          <h2>Get in touch</h2>
           <p>
             Email{" "}
             <a href="mailto:careers@hifriction.com">careers@hifriction.com</a>{" "}
             with a short note about you and, if you have one, a link to
-            something you've made. CVs are fine, but they're not the point.
-          </p>
-
-          <h2>Roles we're looking to fill</h2>
-          <ul className={styles.roles}>
-            {roles.map((role) => (
-              <li key={role.title} className={styles.role}>
-                <p className={styles.team}>{role.team}</p>
-                <h3 className={styles.title}>{role.title}</h3>
-                <p className={styles.summary}>{role.summary}</p>
-              </li>
-            ))}
-          </ul>
-
-          <p className={styles.aside}>
-            Don't see your role? Write anyway. We're small — we mostly hire
-            people we wish we'd met sooner.
+            something you've made. CVs are fine but they're not the point.
           </p>
         </div>
       </div>

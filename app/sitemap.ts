@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { posts } from "@/lib/posts";
+import { getAllPosts } from "@/lib/posts";
 
 const SITE_URL = "https://hifriction.com";
 
@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/join-the-team/`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
   ];
 
-  const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+  const postRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}/`,
     lastModified: new Date(post.datePublished),
     changeFrequency: "monthly",

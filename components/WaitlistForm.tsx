@@ -88,7 +88,7 @@ export default function WaitlistForm() {
       <div className={styles.successBox} role="status">
         <p className={styles.successText}>
           You're in. <span className={styles.accentAt}>@{username}</span> is
-          reserved. You're human. Obviously.
+          reserved. You're human. Probably.
         </p>
       </div>
     );

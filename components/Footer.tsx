@@ -1,20 +1,6 @@
 import { menuItems } from "@/lib/menu";
+import { getAllPosts } from "@/lib/posts";
 import styles from "./Footer.module.css";
-
-const blogPosts = [
-  {
-    href: "/blog/why-we-built-hifriction",
-    label: "Why we built a social network that's actually hard to join",
-  },
-  {
-    href: "/blog/the-bot-problem",
-    label: "The bot problem is worse than you think",
-  },
-  {
-    href: "/blog/humanity-tokens",
-    label: "What is a Humanity Token, and how do you earn one?",
-  },
-];
 
 const socials = [
   { href: "https://x.com/hifriction", label: "X", icon: XIcon },
@@ -23,6 +9,8 @@ const socials = [
 ];
 
 export default function Footer() {
+  const recentPosts = getAllPosts().slice(0, 3);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -50,9 +38,9 @@ export default function Footer() {
           <div className={styles.col}>
             <p className={styles.colHeading}>Reading</p>
             <ul className={styles.linkList}>
-              {blogPosts.map(({ href, label }) => (
-                <li key={href}>
-                  <a href={href} className={styles.link}>{label}</a>
+              {recentPosts.map(({ slug, title }) => (
+                <li key={slug}>
+                  <a href={`/blog/${slug}`} className={styles.link}>{title}</a>
                 </li>
               ))}
             </ul>

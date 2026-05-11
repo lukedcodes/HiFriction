@@ -7,7 +7,7 @@ export default function ArticleJsonLd({ post }: { post: Post }) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
-    description: post.description,
+    description: post.preview,
     url: `${SITE_URL}/blog/${post.slug}/`,
     datePublished: post.datePublished,
     image: `${SITE_URL}/og-image.jpg`,

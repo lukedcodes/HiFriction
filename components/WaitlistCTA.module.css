@@ -1,20 +1,9 @@
 .layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
-  align-items: center;
-}
-
-@media (min-width: 800px) {
-  .layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: var(--space-7);
-  }
-}
-
-.copyCol {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
 }
 
 .badge {
@@ -25,8 +14,6 @@
   border: 1px solid rgba(3, 105, 81, 0.2);
   border-radius: 99px;
   padding: var(--space-2) var(--space-4);
-  margin-bottom: var(--space-5);
-  align-self: flex-start;
 }
 
 .badgeIcon {
@@ -43,33 +30,28 @@
 }
 
 .heading {
-  margin-bottom: var(--space-4);
+  margin: 0;
+  max-width: 36rem;
 }
 
 .body {
   color: var(--text-muted);
-  margin-bottom: var(--space-3);
-}
-
-.formCard {
-  width: 100%;
-}
-
-.formHeader {
-  margin-bottom: var(--space-4);
-}
-
-.formTitle {
-  margin: 0 0 var(--space-1);
-}
-
-.formSub {
-  font-size: var(--text-sm);
   margin: 0;
+  max-width: 32rem;
+}
+
+.formWrap {
+  width: 100%;
+  max-width: 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
 }
 
 .reassurance {
   font-size: var(--text-sm);
   color: var(--text-muted);
-  margin: var(--space-3) 0 0;
+  margin: 0;
+  max-width: 30rem;
 }

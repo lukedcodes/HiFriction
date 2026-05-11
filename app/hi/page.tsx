@@ -10,18 +10,17 @@ export const metadata: Metadata = {
 type Community = {
   slug: string;
   description: string;
-  members: string;
 };
 
 const communities: Community[] = [
-  { slug: "formula1", description: "Race weekends, tyre strategy, and the slow death of the V10.", members: "12.4k" },
-  { slug: "gardening", description: "Soil, seeds, and the long game. Photos welcome, no AI plants.", members: "8.9k" },
-  { slug: "filmmakers", description: "Independent film talk — from script doctoring to colour grading.", members: "6.1k" },
-  { slug: "cycling", description: "Commuters, tourers, and people who count their grams.", members: "5.7k" },
-  { slug: "books", description: "What you're reading, and what it's doing to you.", members: "11.2k" },
-  { slug: "homecooks", description: "Tonight's dinner, tomorrow's leftovers. Recipes that actually work.", members: "9.3k" },
-  { slug: "indiehackers", description: "Solo founders shipping small, useful things.", members: "4.8k" },
-  { slug: "running", description: "Couch-to-5k to ultramarathoners. Everyone counts.", members: "7.0k" },
+  { slug: "formula1", description: "Race weekends, tyre strategy, and the slow death of the V10." },
+  { slug: "gardening", description: "Soil, seeds, and the long game. Photos welcome, no AI plants." },
+  { slug: "filmmakers", description: "Independent film talk from script doctoring to colour grading." },
+  { slug: "cycling", description: "Commuters, tourers, and people who count their grams." },
+  { slug: "books", description: "What you're reading, and what it's doing to you." },
+  { slug: "homecooks", description: "Tonight's dinner, tomorrow's leftovers. Recipes that actually work." },
+  { slug: "indiehackers", description: "Solo founders shipping small, useful things." },
+  { slug: "running", description: "Couch-to-5k to ultramarathoners. Everyone counts." },
 ];
 
 export default function HiPage() {
@@ -31,20 +30,19 @@ export default function HiPage() {
         <header className={styles.header}>
           <h1>Hi/ Communities</h1>
           <p className="lede">
-            Every <code className={styles.code}>/hi/</code> is a smaller corner of Hi Friction —
-            built around something specific you care about. Formula 1. Gardening. Filmmaking.
-            Real people, talking about real things. Below are some of the most active right now.
+            Every <code className={styles.code}>/hi/</code> is a smaller corner
+            of Hi Friction, built around something specific you care about.
+            Formula 1. Gardening. Filmmaking. Real people, talking about real
+            things. These are some examples of communities we're building first. Come help
+            shape them.
           </p>
         </header>
 
         <ul className={styles.grid}>
-          {communities.map(({ slug, description, members }) => (
-            <li key={slug}>
-              <a href={`/hi/${slug}`} className={styles.card}>
-                <p className={styles.slug}>/hi/{slug}</p>
-                <p className={styles.description}>{description}</p>
-                <p className={styles.members}>{members} members</p>
-              </a>
+          {communities.map(({ slug, description }) => (
+            <li key={slug} className={styles.card}>
+              <p className={styles.slug}>/hi/{slug}</p>
+              <p className={styles.description}>{description}</p>
             </li>
           ))}
         </ul>

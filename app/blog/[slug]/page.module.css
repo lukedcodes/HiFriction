@@ -10,7 +10,7 @@
 .prose > * + * { margin-top: var(--space-4); }
 
 .prose h1 {
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--space-5);
 }
 
 .prose h2 {

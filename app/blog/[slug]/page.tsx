@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ArticleJsonLd from "@/components/ArticleJsonLd";
-import { posts, postBySlug } from "@/lib/posts";
+import { getAllPosts, postBySlug } from "@/lib/posts";
 import styles from "./page.module.css";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }));
+  return getAllPosts().map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata(
@@ -19,11 +19,11 @@ export async function generateMetadata(
 
   return {
     title: `${post.title} — Hi Friction`,
-    description: post.description,
+    description: post.preview,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: {
       title: post.title,
-      description: post.description,
+      description: post.preview,
       type: "article",
       publishedTime: post.datePublished,
       url: `/blog/${slug}`,
@@ -31,7 +31,7 @@ export async function generateMetadata(
     twitter: {
       card: "summary_large_image",
       title: post.title,
-      description: post.description,
+      description: post.preview,
     },
   };
 }
@@ -43,7 +43,8 @@ export default async function PostPage(
   const post = postBySlug(slug);
   if (!post) notFound();
 
-  const { default: Content } = await import(`@/content/blog/${slug}.mdx`);
+  const base = post.filename.replace(/\.md$/, "");
+  const { default: Content } = await import(`@/content/blog/${base}.md`);
 
   return (
     <section className="section">

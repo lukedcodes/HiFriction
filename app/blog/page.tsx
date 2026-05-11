@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { posts } from "@/lib/posts";
+import { getAllPosts } from "@/lib/posts";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -14,14 +14,15 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const posts = getAllPosts();
+
   return (
     <section className="section">
       <div className="container-md">
         <header className={styles.header}>
           <h1>Blog</h1>
           <p className="lede">
-            Notes from the team — on bots, on people, on the small design choices
-            that make a social network feel like one again.
+            Notes on bots, people, and why the internet doesn't have to feel like this.
           </p>
         </header>
 
