@@ -1,0 +1,48 @@
+.back {
+  display: inline-block;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: var(--space-4);
+}
+.back:hover { color: var(--accent); text-decoration: none; }
+
+.prose > * + * { margin-top: var(--space-4); }
+
+.prose h1 {
+  margin: 0 0 var(--space-4);
+}
+
+.prose h2 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+.prose h3 {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+.prose p,
+.prose li {
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: var(--space-4);
+}
+
+.prose li + li {
+  margin-top: var(--space-2);
+}
+
+.prose blockquote {
+  margin: var(--space-4) 0;
+  padding: 0 var(--space-4);
+  border-left: 3px solid var(--accent);
+  color: var(--text-muted);
+  font-style: italic;
+}

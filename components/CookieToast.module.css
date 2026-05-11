@@ -1,46 +1,29 @@
 .toast {
   position: fixed;
+  left: var(--space-4);
   bottom: var(--space-4);
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 100;
+  width: 18rem;
+  max-width: calc(100vw - var(--space-5));
   background: var(--hf-grey-700);
   border: 1px solid var(--border);
-  border-radius: 99px;
-  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
   display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-  white-space: nowrap;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   animation: slide-up 0.3s ease both;
 }
 
 @keyframes slide-up {
-  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
-  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
-}
-
-@media (max-width: 600px) {
-  .toast {
-    flex-direction: column;
-    border-radius: var(--radius-lg);
-    white-space: normal;
-    left: var(--space-4);
-    right: var(--space-4);
-    transform: none;
-    bottom: var(--space-3);
-  }
-
-  @keyframes slide-up {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .message {
   font-size: var(--text-sm);
-  color: var(--text-muted);
+  color: var(--hf-grey-000);
   margin: 0;
 }
 
@@ -55,7 +38,6 @@
   padding: var(--space-2) var(--space-4);
   font-size: var(--text-sm);
   font-weight: 600;
-  border-radius: 99px;
 }
 
 .decline {

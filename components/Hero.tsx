@@ -1,12 +1,9 @@
-import Nav from "./Nav";
 import ScrollButton from "./ScrollButton";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
     <section className={styles.hero} aria-label="Hero">
-      <Nav />
-
       <div className={styles.content}>
         <div className={styles.textCol}>
           <h1 className={`fade-up ${styles.h1}`}>

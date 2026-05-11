@@ -1,8 +1,101 @@
-.nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+.header {
+  background: var(--hf-grey-000);
+  border-bottom: 1px solid var(--border);
+  position: relative;
   z-index: 10;
-  padding: 1.75rem 0;
+}
+
+.inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: var(--space-4) var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.joinBtn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  transition: background 100ms ease;
+}
+.joinBtn:hover {
+  background: var(--accent-hover);
+  color: #fff;
+  text-decoration: none;
+}
+
+.menuToggle {
+  background: transparent;
+  color: var(--text-primary);
+  padding: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: var(--radius);
+}
+.menuToggle:hover { background: rgba(29, 31, 36, 0.06); }
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + var(--space-3));
+  right: 0;
+  min-width: 15rem;
+  background: var(--hf-emerald-700);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) 0;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  z-index: 30;
+}
+
+.dropdownList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdownLink {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  color: var(--hf-grey-000);
+  text-decoration: none;
+  font-size: var(--text-base);
+  font-weight: 500;
+  transition: background 100ms ease, color 100ms ease;
+}
+.dropdownLink:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--hf-emerald-100);
+  text-decoration: none;
 }

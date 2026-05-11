@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Serif, Noto_Sans } from "next/font/google";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import CookieToast from "@/components/CookieToast";
 import "./globals.css";
 
@@ -20,10 +22,6 @@ export const metadata: Metadata = {
   description:
     "Social media was better when humans were posting. Hi Friction verifies every user, every post, every day. Bots aren't welcome here.",
   metadataBase: new URL("https://hifriction.com"),
-  icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
-  },
   openGraph: {
     title: "Hi Friction — The Human Social Network",
     description:
@@ -39,9 +37,6 @@ export const metadata: Metadata = {
     title: "Hi Friction — The Human Social Network",
     description: "Social media was better when humans were posting.",
     images: ["/og-image.jpg"],
-  },
-  alternates: {
-    canonical: "https://hifriction.com",
   },
   robots: { index: true, follow: true },
 };
@@ -81,7 +76,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
+        <Nav />
+        <main>{children}</main>
+        <Footer />
         <CookieToast />
       </body>
     </html>
