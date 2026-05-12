@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Aurora from "@/components/Aurora";
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
+import Challenges from "@/components/Challenges";
 import WaitlistCTA from "@/components/WaitlistCTA";
 import ScrollOnArrival from "@/components/ScrollOnArrival";
 
@@ -16,8 +16,8 @@ export default function Home() {
       <ScrollOnArrival />
       <Aurora />
       <Hero />
-      <Features />
       <HowItWorks />
+      <Challenges />
       <WaitlistCTA />
     </>
   );

@@ -29,6 +29,16 @@
   --accent-hover: var(--hf-emerald-300);
   --border:       rgba(29, 31, 36, 0.1);
 
+  /* Challenge types — colour-code labels consistently */
+  --type-written:    var(--hf-emerald-500);
+  --type-written-bg: rgba(3, 105, 81, 0.10);
+  --type-video:      #D97706;
+  --type-video-bg:   rgba(217, 119, 6, 0.12);
+  --type-puzzle:     #7C3AED;
+  --type-puzzle-bg:  rgba(124, 58, 237, 0.12);
+  --type-pulse:      #E11D48;
+  --type-pulse-bg:   rgba(225, 29, 72, 0.10);
+
   /* Spacing scale */
   --space-1: 0.25rem;
   --space-2: 0.5rem;

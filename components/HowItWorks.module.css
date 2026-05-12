@@ -1,14 +1,23 @@
+.section {
+  background: var(--hf-emerald-700);
+  padding: var(--space-7) 0;
+}
+
 .header {
   max-width: 40rem;
   margin: 0 auto var(--space-6);
   text-align: center;
 }
 
+.heading {
+  color: var(--hf-grey-000);
+  margin: 0 0 var(--space-1);
+}
+
 .sub {
   font-size: var(--text-lg);
-  color: var(--text-muted);
-  margin: var(--space-1) 0 0;
-  font-weight: 400;
+  color: rgba(245, 247, 251, 0.65);
+  margin: 0;
 }
 
 .grid {
@@ -17,71 +26,52 @@
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 600px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.step {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: var(--space-4);
-  overflow: hidden;
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+  }
 }
 
-.content {
-  flex: 3;
-  min-width: 0;
+.layer {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  align-items: flex-start;
+  gap: var(--space-2);
 }
 
-.imageWrap {
-  flex: 1;
-  align-self: stretch;
-  position: relative;
-  margin-block: calc(var(--space-5) * -1);
-  margin-right: calc(var(--space-5) * -1);
-  overflow: hidden;
+.icon {
+  width: 32px;
+  height: 32px;
+  color: var(--hf-emerald-100);
+  margin-bottom: var(--space-2);
 }
 
-.image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 70%);
-  mask-image: linear-gradient(to right, transparent, black 70%);
+.layerLabel {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hf-emerald-100);
+  margin: 0;
 }
 
-.numeral {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  border: 2px solid var(--accent);
-  font-family: var(--font-serif);
+.layerTitle {
   font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-}
-
-.stepTitle {
-  font-size: var(--text-lg);
-  color: var(--text-primary);
+  color: var(--hf-grey-000);
   margin: 0;
 }
 
-.stepBody {
+.layerBody {
   font-size: var(--text-base);
-  color: var(--text-muted);
+  color: rgba(245, 247, 251, 0.75);
+  line-height: 1.6;
   margin: 0;
-  line-height: 1.7;
 }
