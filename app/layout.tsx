@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Social media was better when humans were posting. Hi Friction verifies every user, every post, every day. Bots aren't welcome here.",
     url: "https://hifriction.com",
     siteName: "Hi Friction",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     site: "@hifriction",
     title: "Hi Friction — The Human Social Network",
     description: "Social media was better when humans were posting.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },
 };

@@ -10,7 +10,7 @@ export default function ArticleJsonLd({ post }: { post: Post }) {
     description: post.preview,
     url: `${SITE_URL}/blog/${post.slug}/`,
     datePublished: post.datePublished,
-    image: `${SITE_URL}/og-image.jpg`,
+    image: `${SITE_URL}/og-image.png`,
     publisher: {
       "@type": "Organization",
       name: "Hi Friction",
