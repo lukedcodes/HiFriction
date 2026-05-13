@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Join the Team — Hi Friction",
@@ -11,7 +10,7 @@ export default function JoinTheTeamPage() {
   return (
     <section className="section">
       <div className="container-md">
-        <header className={styles.header}>
+        <header className="page-header">
           <h1>Join the Team</h1>
           <p className="lede">
             We're early. The team is small and we're building something we
@@ -20,7 +19,7 @@ export default function JoinTheTeamPage() {
           </p>
         </header>
 
-        <div className={styles.body}>
+        <div className="prose">
           <p>
             We're not hiring for specific roles right now. What we're looking
             for is people who get what we're trying to do and have skills that

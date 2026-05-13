@@ -31,9 +31,9 @@ export default function HowItWorks() {
   return (
     <section className={styles.section} aria-labelledby="how-heading">
       <div className="container">
-        <div className={styles.header}>
-          <h2 id="how-heading" className={styles.heading}>How Hi Friction Works</h2>
-          <p className={styles.sub}>4 Layers, No bots.</p>
+        <div className={`section-header ${styles.headerOnDark}`}>
+          <h2 id="how-heading">How Hi Friction Works</h2>
+          <p>4 Layers, No bots.</p>
         </div>
 
         <ul className={styles.grid}>

@@ -1,4 +1,5 @@
 import type { ComponentType, HTMLAttributes, SVGProps } from "react";
+import ChallengeFeed from "./ChallengeFeed";
 import styles from "./Challenges.module.css";
 
 type ChallengeType = "video" | "puzzle" | "pulse";
@@ -58,9 +59,9 @@ export default function Challenges() {
   return (
     <section className="section" aria-labelledby="challenges-heading">
       <div className="container">
-        <div className={styles.header}>
+        <div className="section-header">
           <h2 id="challenges-heading">Every challenge proves something a bot can't fake</h2>
-          <p className={styles.sub}>Spoiler: one of these checks your pulse.</p>
+          <p>Spoiler: one of these checks your pulse.</p>
         </div>
 
         <ul className={styles.types}>
@@ -68,7 +69,7 @@ export default function Challenges() {
             const { Icon, label } = TYPE_META[type];
             const tokenText = `×${tokens} Humanity ${tokens === 1 ? "Token" : "Tokens"}`;
             return (
-              <li key={type} className={`${styles.typeCard} ${styles[`accent-${type}`]}`}>
+              <li key={type} className={`card ${styles.typeCard} ${styles[`accent-${type}`]}`}>
                 <Icon className={styles.typeIcon} aria-hidden="true" />
                 <h3 className={styles.typeName}>{label}</h3>
                 <p className={styles.typeDesc}>{desc}</p>
@@ -78,16 +79,14 @@ export default function Challenges() {
           })}
         </ul>
 
-        <div className={styles.feed} aria-label="Example challenges">
-          <div className={styles.feedTrack}>
-            {challenges.map((c, i) => (
-              <ExampleRow key={i} challenge={c} />
-            ))}
-            {challenges.map((c, i) => (
-              <ExampleRow key={`dup-${i}`} challenge={c} aria-hidden="true" />
-            ))}
-          </div>
-        </div>
+        <ChallengeFeed>
+          {challenges.map((c, i) => (
+            <ExampleRow key={i} challenge={c} />
+          ))}
+          {challenges.map((c, i) => (
+            <ExampleRow key={`dup-${i}`} challenge={c} aria-hidden="true" />
+          ))}
+        </ChallengeFeed>
       </div>
     </section>
   );
@@ -99,7 +98,7 @@ function ExampleRow({
 }: { challenge: Challenge } & HTMLAttributes<HTMLElement>) {
   const { Icon, label } = TYPE_META[challenge.type];
   return (
-    <article className={styles.exampleRow} {...props}>
+    <article className={`card ${styles.exampleRow}`} {...props}>
       <p className={`${styles.examplePill} ${styles[`bg-${challenge.type}`]}`}>
         <Icon className={styles.examplePillIcon} aria-hidden="true" />
         {label}

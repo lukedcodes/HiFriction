@@ -178,6 +178,56 @@ input::placeholder { color: rgba(107, 114, 128, 0.5); }
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
+/* Section header — centered title + muted sub-line on landing sections */
+.section-header {
+  max-width: 40rem;
+  margin: 0 auto var(--space-6);
+  text-align: center;
+}
+.section-header > :last-child:not(:only-child) {
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  margin: var(--space-1) 0 0;
+}
+
+/* Page header — top-of-page block on sub-pages (left-aligned) */
+.page-header {
+  margin-bottom: var(--space-6);
+}
+
+/* Long-form prose — article body styling for static pages and MDX */
+.prose > * + * { margin-top: var(--space-4); }
+.prose h1 { margin: 0 0 var(--space-5); }
+.prose h2 { margin-top: var(--space-6); margin-bottom: var(--space-3); }
+.prose h3 { margin-top: var(--space-5); margin-bottom: var(--space-2); }
+.prose p,
+.prose li {
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+.prose ul,
+.prose ol { padding-left: var(--space-4); }
+.prose li + li { margin-top: var(--space-2); }
+.prose blockquote {
+  margin: var(--space-4) 0;
+  padding: 0 var(--space-4);
+  border-left: 3px solid var(--accent);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Emerald translucent pill — shared base; caller sets size/spacing */
+.pill-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(3, 105, 81, 0.10);
+  border: 1px solid rgba(3, 105, 81, 0.20);
+  border-radius: 99px;
+  color: var(--accent);
+}
+
 /* Fade-up entrance animation */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(20px); }

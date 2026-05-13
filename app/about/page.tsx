@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "About Us — Hi Friction",
@@ -11,7 +10,7 @@ export default function AboutPage() {
   return (
     <section className="section">
       <div className="container-md">
-        <header className={styles.header}>
+        <header className="page-header">
           <h1>About Us</h1>
           <p className="lede">
             Hi Friction started with a frustration that won't be new to you.
@@ -21,7 +20,7 @@ export default function AboutPage() {
           </p>
         </header>
 
-        <div className={styles.body}>
+        <div className="prose">
           <p>
             We got tired of complaining about it and decided to do something
             instead.

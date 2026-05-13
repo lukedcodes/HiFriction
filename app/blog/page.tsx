@@ -19,7 +19,7 @@ export default function BlogPage() {
   return (
     <section className="section">
       <div className="container-md">
-        <header className={styles.header}>
+        <header className="page-header">
           <h1>Blog</h1>
           <p className="lede">
             Notes on bots, people, and why the internet doesn't have to feel like this.

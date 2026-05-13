@@ -6,18 +6,12 @@
   gap: var(--space-4);
 }
 
+/* Composes with global .pill-accent — sizes for use above the heading */
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  background: rgba(3, 105, 81, 0.1);
-  border: 1px solid rgba(3, 105, 81, 0.2);
-  border-radius: 99px;
   padding: var(--space-2) var(--space-4);
 }
 
 .badgeIcon {
-  color: var(--accent);
   font-weight: 700;
 }
 
@@ -26,7 +20,6 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
 }
 
 .heading {

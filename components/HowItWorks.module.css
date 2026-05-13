@@ -3,22 +3,9 @@
   padding: var(--space-7) 0;
 }
 
-.header {
-  max-width: 40rem;
-  margin: 0 auto var(--space-6);
-  text-align: center;
-}
-
-.heading {
-  color: var(--hf-grey-000);
-  margin: 0 0 var(--space-1);
-}
-
-.sub {
-  font-size: var(--text-lg);
-  color: rgba(245, 247, 251, 0.65);
-  margin: 0;
-}
+/* Composes with global .section-header — overrides text colours for dark bg */
+.headerOnDark h2 { color: var(--hf-grey-000); }
+.headerOnDark > :last-child:not(:only-child) { color: var(--hf-grey-000); }
 
 .grid {
   list-style: none;

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Work With Us — Hi Friction",
@@ -11,7 +10,7 @@ export default function WorkWithUsPage() {
   return (
     <section className="section">
       <div className="container-md">
-        <header className={styles.header}>
+        <header className="page-header">
           <h1>Work With Us</h1>
           <p className="lede">
             Hi Friction is a small network of verified humans who chose to be
@@ -19,7 +18,7 @@ export default function WorkWithUsPage() {
           </p>
         </header>
 
-        <div className={styles.body}>
+        <div className="prose">
           <h2>What advertising looks like here</h2>
           <p>
             No auctions. No retargeting. No behavioural profiles built from
@@ -34,7 +33,7 @@ export default function WorkWithUsPage() {
           </p>
 
           <h2>What we offer</h2>
-          <ul className={styles.list}>
+          <ul>
             <li>
               <strong>Community sponsorships.</strong> Pick a{" "}
               <code>/hi/</code> community and sponsor it for a quarter. Your

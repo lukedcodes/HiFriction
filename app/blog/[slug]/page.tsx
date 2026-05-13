@@ -51,7 +51,7 @@ export default async function PostPage(
       <div className="container-md">
         <a href="/blog" className={styles.back}>← Back to blog</a>
         <ArticleJsonLd post={post} />
-        <article className={styles.prose}>
+        <article className="prose">
           <Content />
         </article>
       </div>

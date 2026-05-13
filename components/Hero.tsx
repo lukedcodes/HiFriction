@@ -1,3 +1,5 @@
+import HeroPhone from "./HeroPhone";
+import HeroPosts from "./HeroPosts";
 import ScrollButton from "./ScrollButton";
 import styles from "./Hero.module.css";
 
@@ -32,38 +34,10 @@ export default function Hero() {
         </div>
 
         <div className={`fade-up fade-up-delay-2 ${styles.visualCol}`} aria-hidden="true">
-          <PhoneMockup />
+          <HeroPhone />
+          <HeroPosts />
         </div>
       </div>
     </section>
-  );
-}
-
-function PhoneMockup() {
-  return (
-    <div className={styles.phone}>
-      <div className={styles.phoneNotch} />
-      <div className={styles.phoneScreen}>
-        <div className={styles.mockPost}>
-          <div className={styles.mockAvatar} />
-          <div className={styles.mockLines}>
-            <div className={styles.mockLine} style={{ width: "70%" }} />
-            <div className={styles.mockLine} style={{ width: "90%" }} />
-            <div className={styles.mockLine} style={{ width: "55%" }} />
-          </div>
-        </div>
-        <div className={styles.mockBadge}>
-          <span className={styles.mockBadgeCheck}>✓</span>
-          <span>Original Human</span>
-        </div>
-        <div className={styles.mockPost}>
-          <div className={styles.mockAvatar} />
-          <div className={styles.mockLines}>
-            <div className={styles.mockLine} style={{ width: "85%" }} />
-            <div className={styles.mockLine} style={{ width: "60%" }} />
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }

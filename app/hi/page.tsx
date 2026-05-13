@@ -27,7 +27,7 @@ export default function HiPage() {
   return (
     <section className="section">
       <div className="container-md">
-        <header className={styles.header}>
+        <header className="page-header">
           <h1>Hi/ Communities</h1>
           <p className="lede">
             Every <code className={styles.code}>/hi/</code> is a smaller corner
@@ -40,7 +40,7 @@ export default function HiPage() {
 
         <ul className={styles.grid}>
           {communities.map(({ slug, description }) => (
-            <li key={slug} className={styles.card}>
+            <li key={slug} className={`card ${styles.communityCard}`}>
               <p className={styles.slug}>/hi/{slug}</p>
               <p className={styles.description}>{description}</p>
             </li>
