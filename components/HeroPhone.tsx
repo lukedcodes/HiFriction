@@ -149,7 +149,7 @@ const challenges: Challenge[] = [
   },
 ];
 
-const CYCLE_MS = 6500;
+const CYCLE_MS = 4000;
 /** Countdown shown on each challenge card, in seconds. Resets every cycle. */
 const COUNTDOWN_SECONDS = 166; // 2:46
 

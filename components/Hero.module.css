@@ -159,7 +159,7 @@
   object-fit: cover;
   background-size: cover;
   background-position: center;
-  animation: backdrop-in 600ms ease both;
+  animation: backdrop-in 400ms ease both;
 }
 
 @keyframes backdrop-in {
