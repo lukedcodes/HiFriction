@@ -23,7 +23,7 @@ export default function Hero() {
               <ScrollButton targetId="waitlist" className={styles.ctaButton}>
                 Join the waitlist
               </ScrollButton>
-              <ScrollButton targetId="features" className={styles.learnMoreButton}>
+              <ScrollButton targetId="how" className={styles.learnMoreButton}>
                 Learn more
               </ScrollButton>
             </div>

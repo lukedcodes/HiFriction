@@ -29,7 +29,7 @@ const layers = [
 
 export default function HowItWorks() {
   return (
-    <section className={styles.section} aria-labelledby="how-heading">
+    <section id="how" className={styles.section} aria-labelledby="how-heading">
       <div className="container">
         <div className={`section-header ${styles.headerOnDark}`}>
           <h2 id="how-heading">How Hi Friction Works</h2>

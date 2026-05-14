@@ -162,6 +162,15 @@
   animation: backdrop-in 400ms ease both;
 }
 
+/* Off-screen video tag — used to preload the next clip without showing it. */
+.phonePreloader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 @keyframes backdrop-in {
   from {
     opacity: 0;

@@ -32,6 +32,8 @@ export default function Nav() {
   }, [open]);
 
   function handleWaitlistClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    // Let the browser handle modifier-clicks (new tab, new window, download).
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
     if (pathname === "/") {
       smoothScrollTo("waitlist");
@@ -46,7 +48,7 @@ export default function Nav() {
       <div className={styles.inner}>
         <a href="/" aria-label="Hi Friction home" className={styles.brand}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/HiFriction-Logo-Dark.png" alt="Hi Friction" height={36} style={{ width: "auto" }} />
+          <img src="/HiFriction-Logo-Dark.png" alt="Hi Friction" width={164} height={36} />
         </a>
 
         <div ref={wrapRef} className={styles.actions}>

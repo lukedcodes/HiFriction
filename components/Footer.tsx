@@ -16,7 +16,7 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.brand}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/HiFriction-Logo-Light.png" alt="Hi Friction" height={36} style={{ width: "auto" }} />
+          <img src="/HiFriction-Logo-Light.png" alt="Hi Friction" width={164} height={36} />
           <p className={styles.tagline}>Humans only. We checked.</p>
           <p className={styles.about}>
             The internet was built by people. Somewhere along the way, that got forgotten. We're doing something about it.
@@ -40,7 +40,7 @@ export default function Footer() {
             <ul className={styles.linkList}>
               {recentPosts.map(({ slug, title }) => (
                 <li key={slug}>
-                  <a href={`/blog/${slug}`} className={styles.link}>{title}</a>
+                  <a href={`/blog/${slug}/`} className={styles.link}>{title}</a>
                 </li>
               ))}
             </ul>
