@@ -388,22 +388,10 @@
   min-width: 0;
 }
 
-.postNameRow {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 6px;
-  min-width: 0;
-}
-
 .postName {
   font-size: 13px;
   font-weight: 700;
   color: var(--text-primary);
-}
-
-.postHandle {
-  font-size: 12px;
-  color: var(--text-muted);
 }
 
 .postMeta {

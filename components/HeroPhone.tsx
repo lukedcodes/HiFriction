@@ -158,18 +158,50 @@ export default function HeroPhone() {
   const [seconds, setSeconds] = useState(COUNTDOWN_SECONDS);
 
   useEffect(() => {
-    const id = window.setInterval(() => {
-      setIndex((i) => (i + 1) % challenges.length);
-    }, CYCLE_MS);
-    return () => window.clearInterval(id);
+    let id: number | undefined;
+    const start = () => {
+      id = window.setInterval(() => {
+        setIndex((i) => (i + 1) % challenges.length);
+      }, CYCLE_MS);
+    };
+    const stop = () => {
+      if (id !== undefined) {
+        window.clearInterval(id);
+        id = undefined;
+      }
+    };
+    const onVisibility = () => (document.hidden ? stop() : start());
+
+    if (!document.hidden) start();
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      stop();
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
   }, []);
 
   useEffect(() => {
     setSeconds(COUNTDOWN_SECONDS);
-    const tick = window.setInterval(() => {
-      setSeconds((s) => (s > 0 ? s - 1 : 0));
-    }, 1000);
-    return () => window.clearInterval(tick);
+    let tick: number | undefined;
+    const start = () => {
+      tick = window.setInterval(() => {
+        setSeconds((s) => (s > 0 ? s - 1 : 0));
+      }, 1000);
+    };
+    const stop = () => {
+      if (tick !== undefined) {
+        window.clearInterval(tick);
+        tick = undefined;
+      }
+    };
+    const onVisibility = () => (document.hidden ? stop() : start());
+
+    if (!document.hidden) start();
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      stop();
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
   }, [index]);
 
   const current = challenges[index];
