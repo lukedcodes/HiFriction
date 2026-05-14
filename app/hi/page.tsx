@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Hi/ Communities — Hi Friction",
   description: "Browse Hi/ communities — small corners of Hi Friction for the things you care about.",
-  alternates: { canonical: "/hi" },
+  alternates: { canonical: "/hi/" },
 };
 
 type Community = {

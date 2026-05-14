@@ -5,11 +5,11 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Blog — Hi Friction",
   description: "Notes from the team on building a social network with humans in mind.",
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: "/blog/" },
   openGraph: {
     title: "Blog — Hi Friction",
     description: "Notes from the team on building a social network with humans in mind.",
-    url: "/blog",
+    url: "/blog/",
   },
 };
 

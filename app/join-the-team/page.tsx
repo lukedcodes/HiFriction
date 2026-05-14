@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Join the Team — Hi Friction",
   description: "Open roles and how to get in touch about working on Hi Friction.",
-  alternates: { canonical: "/join-the-team" },
+  alternates: { canonical: "/join-the-team/" },
 };
 
 export default function JoinTheTeamPage() {

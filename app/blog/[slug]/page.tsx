@@ -20,13 +20,13 @@ export async function generateMetadata(
   return {
     title: `${post.title} — Hi Friction`,
     description: post.preview,
-    alternates: { canonical: `/blog/${slug}` },
+    alternates: { canonical: `/blog/${slug}/` },
     openGraph: {
       title: post.title,
       description: post.preview,
       type: "article",
       publishedTime: post.datePublished,
-      url: `/blog/${slug}`,
+      url: `/blog/${slug}/`,
     },
     twitter: {
       card: "summary_large_image",

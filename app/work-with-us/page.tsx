@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Work With Us — Hi Friction",
   description: "Advertising and partnerships on Hi Friction — reach a verified, human audience.",
-  alternates: { canonical: "/work-with-us" },
+  alternates: { canonical: "/work-with-us/" },
 };
 
 export default function WorkWithUsPage() {

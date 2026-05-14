@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us — Hi Friction",
   description: "Why we're building a social network with humans at its centre.",
-  alternates: { canonical: "/about" },
+  alternates: { canonical: "/about/" },
 };
 
 export default function AboutPage() {
