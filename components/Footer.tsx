@@ -1,5 +1,6 @@
 import { menuItems } from "@/lib/menu";
 import { getAllPosts } from "@/lib/posts";
+import TrackedLink from "./TrackedLink";
 import styles from "./Footer.module.css";
 
 const socials = [
@@ -51,15 +52,17 @@ export default function Footer() {
             <ul className={styles.socialList}>
               {socials.map(({ href, label, icon: Icon }) => (
                 <li key={href}>
-                  <a
+                  <TrackedLink
                     href={href}
                     className={styles.socialLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
+                    eventName="outbound_click"
+                    eventParams={{ destination: label }}
                   >
                     <Icon />
-                  </a>
+                  </TrackedLink>
                 </li>
               ))}
             </ul>

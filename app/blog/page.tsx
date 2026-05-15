@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/posts";
+import TrackedLink from "@/components/TrackedLink";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -29,10 +30,15 @@ export default function BlogPage() {
         <ul className={styles.list}>
           {posts.map(({ slug, title, preview }) => (
             <li key={slug} className={styles.item}>
-              <a href={`/blog/${slug}/`} className={styles.link}>
+              <TrackedLink
+                href={`/blog/${slug}/`}
+                className={styles.link}
+                eventName="blog_open"
+                eventParams={{ slug }}
+              >
                 <h2 className={styles.title}>{title}</h2>
                 <p className={styles.preview}>{preview}</p>
-              </a>
+              </TrackedLink>
             </li>
           ))}
         </ul>

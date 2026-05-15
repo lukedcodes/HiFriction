@@ -2,19 +2,24 @@
 
 import { useEffect, useState } from "react";
 import Script from "next/script";
+import { track } from "@/lib/analytics";
 import styles from "./CookieToast.module.css";
 
 const CONSENT_KEY = "hf_cookie_consent";
 const GA_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID;
 
+function grantConsent() {
+  if (typeof window === "undefined" || !window.gtag) return;
+  window.gtag("consent", "update", { analytics_storage: "granted" });
+}
+
 export default function CookieToast() {
   const [visible, setVisible] = useState(false);
-  const [hasConsent, setHasConsent] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem(CONSENT_KEY);
     if (stored === "true") {
-      setHasConsent(true);
+      grantConsent();
     } else if (stored !== "false") {
       setVisible(true);
     }
@@ -22,8 +27,9 @@ export default function CookieToast() {
 
   function accept() {
     localStorage.setItem(CONSENT_KEY, "true");
-    setHasConsent(true);
+    grantConsent();
     setVisible(false);
+    track("consent_accepted");
   }
 
   function decline() {
@@ -33,14 +39,14 @@ export default function CookieToast() {
 
   return (
     <>
-      {hasConsent && GA_ID && (
+      {GA_ID && (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
             strategy="afterInteractive"
           />
           <Script id="ga4-init" strategy="afterInteractive">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});gtag('js',new Date());gtag('config','${GA_ID}',{send_page_view:false});`}
           </Script>
         </>
       )}

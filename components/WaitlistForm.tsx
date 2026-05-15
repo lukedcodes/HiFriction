@@ -3,18 +3,13 @@
 import { useState, useRef } from "react";
 import { supabase } from "@/lib/supabase";
 import { isDisposableEmail } from "@/lib/disposableEmails";
+import { track } from "@/lib/analytics";
 import styles from "./WaitlistForm.module.css";
 
 type AvailabilityState = "idle" | "checking" | "available" | "taken" | "invalid";
 
 // Reject submissions faster than this — real users take longer to fill the form.
 const MIN_SUBMIT_MS = 1500;
-
-function gtag(...args: unknown[]) {
-  if (typeof window !== "undefined" && "gtag" in window) {
-    (window as { gtag: (...a: unknown[]) => void }).gtag(...args);
-  }
-}
 
 export default function WaitlistForm() {
   const [username, setUsername] = useState("");
@@ -42,7 +37,7 @@ export default function WaitlistForm() {
 
     const result = count === 0 ? "available" : "taken";
     setAvailability(result);
-    gtag("event", "username_checked", { result });
+    track("username_checked", { result });
   }
 
   function handleUsernameChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -61,13 +56,13 @@ export default function WaitlistForm() {
 
     // Honeypot tripped — silently behave as if it succeeded so the bot moves on.
     if (honeypot) {
-      gtag("event", "bot_detected", { reason: "honeypot" });
+      track("bot_detected", { reason: "honeypot" });
       setSuccess(true);
       return;
     }
 
     if (Date.now() - mountedAt.current < MIN_SUBMIT_MS) {
-      gtag("event", "bot_detected", { reason: "too_fast" });
+      track("bot_detected", { reason: "too_fast" });
       setServerError("Hmm, that was quick. Try again?");
       return;
     }
@@ -77,7 +72,7 @@ export default function WaitlistForm() {
       return;
     }
 
-    gtag("event", "cta_click", {
+    track("cta_click", {
       cta_label: "reserve_my_spot",
       page_location: window.location.href,
     });
@@ -102,7 +97,7 @@ export default function WaitlistForm() {
       }
     } else {
       setSuccess(true);
-      gtag("event", "waitlist_signup", { method: "email" });
+      track("waitlist_signup", { method: "email" });
     }
     setSubmitting(false);
   }

@@ -3,6 +3,7 @@ import { Noto_Serif, Noto_Sans } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CookieToast from "@/components/CookieToast";
+import PageViewTracker from "@/components/PageViewTracker";
 import "./globals.css";
 
 const notoSerif = Noto_Serif({
@@ -80,6 +81,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <CookieToast />
+        <PageViewTracker />
       </body>
     </html>
   );
