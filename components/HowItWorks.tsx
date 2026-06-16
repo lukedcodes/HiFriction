@@ -32,7 +32,7 @@ export default function HowItWorks() {
     <section id="how" className={styles.section} aria-labelledby="how-heading">
       <div className="container">
         <div className={`section-header ${styles.headerOnDark}`}>
-          <h2 id="how-heading">How Hi Friction Works</h2>
+          <h2 id="how-heading">How the human-only social network works</h2>
           <p>4 Layers, No bots.</p>
         </div>
 

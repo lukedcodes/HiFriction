@@ -19,14 +19,14 @@ const notoSans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Hi Friction — The Human Social Network",
+  title: "Hi Friction — The Human-Only Social Network",
   description:
-    "Social media was better when humans were posting. Hi Friction verifies every user, every post, every day. Bots aren't welcome here.",
+    "Hi Friction is a human-only social network. Every user is verified human — not just at signup, but continuously. No bots, no AI. Reserve your username.",
   metadataBase: new URL("https://hifriction.com"),
   openGraph: {
-    title: "Hi Friction — The Human Social Network",
+    title: "Hi Friction — The Human-Only Social Network",
     description:
-      "Social media was better when humans were posting. Hi Friction verifies every user, every post, every day. Bots aren't welcome here.",
+      "Hi Friction is a human-only social network. Every user is verified human — not just at signup, but continuously. No bots, no AI. Reserve your username.",
     url: "https://hifriction.com",
     siteName: "Hi Friction",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@hifriction",
-    title: "Hi Friction — The Human Social Network",
-    description: "Social media was better when humans were posting.",
+    title: "Hi Friction — The Human-Only Social Network",
+    description: "A human-only social network. Social media was better when humans were posting.",
     images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },
@@ -48,7 +48,8 @@ const jsonLdOrg = {
   name: "Hi Friction",
   url: "https://hifriction.com",
   logo: "https://hifriction.com/HiFriction-Logo-Light.png",
-  description: "The bot-free social network where every user is verified human.",
+  description: "A human-only social network where every user is continuously verified as human.",
+  slogan: "Humans only. We checked.",
   sameAs: [],
 };
 
