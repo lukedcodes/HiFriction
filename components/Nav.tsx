@@ -1,17 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import { menuItems } from "@/lib/menu";
 import styles from "./Nav.module.css";
-
-const PENDING_SCROLL_KEY = "hf:pendingScrollTo";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement | null>(null);
-  const router = useRouter();
-  const pathname = usePathname();
 
   useEffect(() => {
     if (!open) return;
@@ -31,18 +26,6 @@ export default function Nav() {
     };
   }, [open]);
 
-  function handleWaitlistClick(e: React.MouseEvent<HTMLAnchorElement>) {
-    // Let the browser handle modifier-clicks (new tab, new window, download).
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    e.preventDefault();
-    if (pathname === "/") {
-      smoothScrollTo("waitlist");
-    } else {
-      sessionStorage.setItem(PENDING_SCROLL_KEY, "waitlist");
-      router.push("/");
-    }
-  }
-
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -52,9 +35,6 @@ export default function Nav() {
         </a>
 
         <div ref={wrapRef} className={styles.actions}>
-          <a href="/#waitlist" onClick={handleWaitlistClick} className={styles.joinBtn}>
-            Join Waitlist
-          </a>
           <button
             type="button"
             className={styles.menuToggle}
@@ -85,11 +65,4 @@ export default function Nav() {
       </div>
     </header>
   );
-}
-
-function smoothScrollTo(id: string) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const top = el.getBoundingClientRect().top + window.scrollY;
-  window.scrollTo({ top, behavior: "smooth" });
 }

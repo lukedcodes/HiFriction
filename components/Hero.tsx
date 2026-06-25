@@ -10,9 +10,12 @@ export default function Hero() {
         <div className={styles.textCol}>
           <h1 className={`fade-up ${styles.h1}`}>
             The <span className={styles.accent}>human-only</span> social network.
+          </h1>
+
+          <h2 className={`fade-up ${styles.h2}`}>
             Social media was better when{" "}
             <span className={styles.accent}>humans</span> were posting.
-          </h1>
+          </h2>
 
           <p className={`fade-up fade-up-delay-1 ${styles.sub}`}>
             We built a social network that deliberately adds friction. Enough to

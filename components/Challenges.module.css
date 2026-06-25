@@ -14,9 +14,8 @@
   }
 }
 
-/* Composes with global .card — adds a top accent and column layout */
+/* Composes with global .card — column layout with a per-type accent colour */
 .typeCard {
-  border-top: 3px solid var(--accent);
   padding: var(--space-5) var(--space-4);
   display: flex;
   flex-direction: column;
@@ -53,7 +52,7 @@
   margin-top: var(--space-1);
 }
 
-/* Per-type accent — colours the top border and icon */
+/* Per-type accent — colours the icon */
 .accent-video {
   --accent: var(--type-video);
 }
